@@ -19,46 +19,57 @@
 
     <main class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow border-0">
+            <div class="col-md-10"> <div class="card shadow border-0">
                     <div class="card-body p-4 p-md-5">
-                        <h6 class="text-primary text-uppercase fw-bold small mb-1">Ficha Técnica</h6>
-                        <h1 class="display-6 fw-bold mb-4">Nombre del Juego</h1>
-     
-                        <div class="row text-center mb-4 g-2">
-                            <div class="col-6 col-sm-3">
-                                <div class="p-3 bg-light rounded">
-                                    <small class="d-block text-muted">Dificultad</small>
-                                    <strong id="dificultad">Media</strong>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-3">
-                                <div class="p-3 bg-light rounded">
-                                    <small class="d-block text-muted">Edad</small>
-                                    <strong id="edad">10+</strong>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-3">
-                                <div class="p-3 bg-light rounded">
-                                    <small class="d-block text-muted">Jugadores</small>
-                                    <strong id="jugadores">3 - 4</strong>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-3">
-                                <div class="p-3 bg-light rounded">
-                                    <small class="d-block text-muted">Clase</small>
-                                    <strong id="clasificacion">Estrategia</strong>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h5 class="fw-bold">Descripción</h5>
-                        <p id="descripcion-juego" class="text-muted">Descripcion del juego</p>
                         
-                        <div class="mt-5 pt-4 border-top">
-                            <button class="btn btn-primary w-100 py-3 fw-bold">Agregar a mi Solicitud</button>
-                        </div>
-                    </div>
+                        <div class="row align-items-center">
+                            
+                            <div class="col-md-5 text-center mb-4 mb-md-0">
+                                <img id="imagen-juego" src="/ludoweb/img/logo.png" alt="Cargando..." class="img-fluid rounded shadow-sm" style="max-height: 320px; width: auto; object-fit: contain;">
+                            </div>
+                            
+                            <div class="col-md-7">
+                                <h6 class="text-primary text-uppercase fw-bold small mb-1">Ficha Técnica</h6>
+                                <h1 class="display-6 fw-bold mb-4">Nombre del Juego</h1>
+
+                                <div class="row text-center mb-4 g-2">
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 bg-light rounded">
+                                            <small class="d-block text-muted">Dificultad</small>
+                                            <strong id="dificultad">Media</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 bg-light rounded">
+                                            <small class="d-block text-muted">Edad</small>
+                                            <strong id="edad">10+</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 bg-light rounded">
+                                            <small class="d-block text-muted">Jugadores</small>
+                                            <strong id="jugadores">-</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-sm-3">
+                                        <div class="p-3 bg-light rounded">
+                                            <small class="d-block text-muted">Clase</small>
+                                            <strong id="clasificacion">-</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="h5 fw-bold">Descripción</h3>
+                                <p id="descripcion-juego" class="text-muted">Cargando descripción...</p>
+                                
+                                <div class="mt-4">
+                                    <button class="btn btn-primary w-100 py-3 fw-bold">Agregar a Solicitud</button>
+                                </div>
+				<div class="mt-4 d-grid gap-2">
+				      
+				    <button id="btn-eliminar-juego" class="btn btn-outline-danger btn-sm mt-2 fw-bold" style="display: none;">Eliminar juego</button>
+				</div>
+                            </div> </div> </div>
                 </div>
             </div>
         </div>

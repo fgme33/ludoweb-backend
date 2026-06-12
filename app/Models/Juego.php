@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Juego extends Model
 {
-	protected $fillable = ['titulo', 'descripcion', 'dificultad', 'edad', 'jugadores', 'clase', 'disponible'];
+	protected $fillable = ['titulo', 'descripcion', 'dificultad', 'edad', 'jugadores', 'clase', 'disponible', 'imagen'];
 }

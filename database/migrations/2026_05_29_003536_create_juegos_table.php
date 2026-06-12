@@ -20,6 +20,7 @@ return new class extends Migration
         $table->string('jugadores');
         $table->string('clase');
         $table->boolean('disponible')->default(true);
+	$table->string('imagen')->nullable(); 
         $table->timestamps();
     });
 }

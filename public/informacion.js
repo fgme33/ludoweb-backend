@@ -18,14 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('jugadores').innerText = juego.jugadores;
                 document.getElementById('clasificacion').innerText = juego.clase;
                 document.getElementById('descripcion-juego').innerText = juego.descripcion;
-                
-                // Configurar el botón de agregar
+                document.getElementById('imagen-juego').src = juego.imagen || '/ludoweb/img/logo.png';
                 const btnAgregar = document.querySelector('.card-body button');
                 if(!juego.disponible) {
                     btnAgregar.innerText = "No disponible";
                     btnAgregar.className = "btn btn-danger w-100 py-3 fw-bold disabled";
                 } else {
                     btnAgregar.onclick = () => agregarDesdeDetalle(juego.id, juego.titulo, juego.dificultad);
+                }
+
+		const btnEliminar = document.getElementById('btn-eliminar-juego');
+                if (btnEliminar) {
+                    btnEliminar.style.display = 'block';
+                    btnEliminar.onclick = () => eliminarJuegoCatalogo(juego.id, juego.titulo);
                 }
             })
             .catch(error => console.error('Error al cargar detalle:', error));
@@ -46,4 +51,18 @@ function agregarDesdeDetalle(id, titulo, dificultad) {
     localStorage.setItem('ludo_carrito', JSON.stringify(carrito));
     alert(`${titulo} añadido.`);
     window.location.href = 'catalogo.html';
+}
+
+function eliminarJuegoCatalogo(id, titulo) {
+    if (confirm(`¿Estás completamente seguro de que deseas eliminar "${titulo}" del catálogo de forma permanente?`)) {
+        axios.delete(`${API_URL}/juegos/${id}`)
+            .then(response => {
+                alert(response.data.message);
+                window.location.href = 'catalogo.html';
+            })
+            .catch(error => {
+                console.error('Error al eliminar juego:', error);
+                alert('No se pudo eliminar el juego.');
+            });
+    }
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LudoWeb - Agregar Juego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="/ludoweb/home.html">
+                <img src="/ludoweb/img/logo.png" alt="Logo LudoWeb" style="height: 35px; width: auto; margin-right: 10px;">
+                LudoWeb - Panel Administrativo
+            </a>
+            <a href="consulta_solicitudes.html" class="btn btn-sm btn-light">Volver al Panel</a>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="fw-bold mb-4 text-center">Registrar Nuevo Juego</h2>
+                        
+                        <form id="form-nuevo-juego">
+                            <div class="mb-3">
+                                <label for="titulo" class="form-label fw-bold">Título del Juego</label>
+                                <input type="text" class="form-control" id="titulo" required placeholder="Ej. UNO">
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="dificultad" class="form-label fw-bold">Dificultad</label>
+                                    <select class="form-select" id="dificultad" required>
+                                        <option value="Baja">Baja</option>
+                                        <option value="Media" selected>Media</option>
+                                        <option value="Alta">Alta</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="clase" class="form-label fw-bold">Categoría / Clase</label>
+                                    <input type="text" class="form-control" id="clase" required placeholder="Ej. Fiesta, Estrategia">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="edad" class="form-label fw-bold">Edad Recomendada</label>
+                                    <input type="text" class="form-control" id="edad" required placeholder="Ej. 10+">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="jugadores" class="form-label fw-bold">Número de Jugadores</label>
+                                    <input type="text" class="form-control" id="jugadores" required placeholder="Ej. 2-6">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="imagen" class="form-label fw-bold">Ruta de la Imagen</label>
+                                <input type="text" class="form-control" id="imagen" placeholder="Ej. /ludoweb/img/uno.png">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="descripcion" class="form-label fw-bold">Descripción</label>
+                                <textarea class="form-control" id="descripcion" rows="4" required placeholder="Escribe una breve descripción del juego..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 py-3 fw-bold">Guardar Juego en el Catálogo</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="agregar_juego.js"></script>
+</body>
+</html>
